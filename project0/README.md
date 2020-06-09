@@ -1,6 +1,5 @@
-# Project 0
+# Project 0: HomePage
 
-Web Programming with Python and JavaScript
 
 ### Objectives
 
