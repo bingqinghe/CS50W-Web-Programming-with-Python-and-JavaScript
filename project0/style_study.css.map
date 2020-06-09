@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,OAAG;EACF,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,IAAI;;AAIb,EAAG;EACF,WAAW,EAAC,aAAa;EACzB,SAAS,EAAC,gBAAgB;;AAG3B,KAAM;EACL,WAAW,EAAC,UAAU;EACtB,SAAS,EAAC,KAAK;;AAGhB,KAAM;EACL,WAAW,EAAC,oBAAoB;EAChC,SAAS,EAAC,IAAI",
+"sources": ["style_study.scss"],
+"names": [],
+"file": "style_study.css"
+}

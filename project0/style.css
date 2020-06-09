@@ -1,0 +1,36 @@
+body {
+	background-repeat: no-repeat;
+	background-color: #a3a3c2 !important;
+	min-height: 100%;
+	width: 100%;
+	background-size: cover;
+}
+
+nav {
+	background-color: #a3a3c2;
+}
+
+.externallink {
+	margin: 5px;
+}
+
+@media (min-width: 700px) {
+	body {
+		background-image: url("photos/background.jpg");
+		background-position: absolute;
+	}
+}
+@media (max-width: 600px) {
+	.externallink {
+		margin: 0px;
+	}
+}
+
+#hello {
+	color: white;
+	font-family: 'Metal Mania', serif;
+  	font-size: 150px;
+  	text-shadow: 4px 4px 4px #aaa;
+  	margin: 50px;
+  	text-align: center;
+}

@@ -1,0 +1,28 @@
+.externallink {
+  margin: 5px; }
+
+.listfont {
+  font-family: 'Shadows Into Light', serif;
+  font-size: 50px; }
+
+.container {
+  margin: 50px;
+  padding: 10px; }
+
+#brief, #interestlist, table {
+  font-family: serif, sans-serif; }
+
+#brief {
+  font-size: 25px; }
+
+#interestlist {
+  font-size: 20px; }
+
+table {
+  font-size: 30px; }
+
+img {
+  height: auto;
+  width: 80%; }
+
+/*# sourceMappingURL=style_about.css.map */

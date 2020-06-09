@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,MAAG;EACF,WAAW,EAAC,oBAAoB;EAChC,SAAS,EAAC,IAAI;AAGf,KAAE;EACD,WAAW,EAAC,OAAO;EACnB,SAAS,EAAC,IAAI;;AAIhB,KAAM;EACL,MAAM,EAAE,IAAI",
+"sources": ["style_travel.scss"],
+"names": [],
+"file": "style_travel.css"
+}

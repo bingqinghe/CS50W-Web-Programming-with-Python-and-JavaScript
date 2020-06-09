@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Bingqing's World!</title>
+    <link rel="stylesheet" href="style_about.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
+    <script src="https://kit.fontawesome.com/35148eb65e.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+
+  <body style="background-color: #c39bd3;">
+    <nav class="navbar navbar-expand-lg p-4" style="background-color: #a3a3c2;">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active"><a class="nav-link" href="index.html" style="font-size: 20px;"> Home </a></li>
+          <li class="nav-item active"><a class="nav-link" href="about.html" style="font-size: 20px;"> About ME </a></li>
+          <li class="nav-item"><a class="nav-link" href="study.html" style="font-size: 20px;"> Study History </a></li>
+          <li class="nav-item"><a class="nav-link" href="travel.html" style="font-size: 20px;"> Travel History</a></li>
+        </ul>
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <a class="navbar-brand" href="index.html"> BINGQING HE </a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item"><a href='https://www.github.com/bingqinghe'><i class="fab fa-github fa-2x externallink" alt='github'></i></a></li>
+        <li class="nav-item"><a href='https://www.instagram.com/balabala_biubiu233/'><i class="fab fa-instagram fa-2x externallink"></i></a></li>
+        <li class="nav-item"><a href='https://www.facebook.com/bingqing.he.98'><i class="fab fa-facebook fa-2x externallink"></i></a></li>
+      </ul>
+    </nav>
+
+    <div class='container'>
+      <div class="row">
+        <div class="col-5">
+          <div class="list-group listfont" id="about-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="who-am-i-list" data-toggle="list" href="#who-am-i" role="tab" aria-controls="1"><i class="far fa-user"></i> Who Am I ?</a>
+            <a class="list-group-item list-group-item-action" id="interest-list" data-toggle="list" href="#interest" role="tab" aria-controls="2"><i class="far fa-laugh-beam"></i> My Interests ?</a>
+            <a class="list-group-item list-group-item-action" id="top5-quote-list" data-toggle="list" href="#top5-quote" role="tab" aria-controls="3"><i class="far fa-bell"></i> Favourite Quotes ?</a>
+            <a class="list-group-item list-group-item-action" id="contact-list" data-toggle="list" href="#contact" role="tab" aria-controls="4"><i class="far fa-address-card"></i> Contact Info ?</a>
+          </div>
+        </div>
+        
+        <div class="col-7">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="who-am-i" role="tabpanel" aria-labelledby="who-am-i-list">
+              <div id="brief">
+                <p> I am a recent Computer Engineering graduate from University of Toronto who spent 8 years in Canada. </p>
+                <p> I made a few foreigner friends who come from all over the world and it is my honor to meeting them and learing different cultures. </p>
+                <p> Those years studying abroad taught me lots of things which I did not know before coming to this amazing country. I appreciate for these lessons and they will be my treasure for the whole life. </p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="interest" role="tabpanel" aria-labelledby="interest-list">
+              <ul id="interestlist">
+                <li> Skateboard </li>
+                  <p> I started to learn since 2017 and although I am still not professional, I enjoy the time with it. </p>
+                <li> Computer Games </li>
+                  <p> My favourite game is League of Legends which I have played for 6 years and the team I like  is the RNG from LPL in 2018. They were really awesome!!! </p>
+                  <p> I also play other games such as Playerunknown's Battlegrounds, Counter-Strike: Global Offensive and Grand Theft Auto V. </p>
+                <li> Music </li>
+                  <p> Music is like a close friend of mine which is with me almost all the time. </p>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="top5-quote" role="tabpanel" aria-labelledby="top5-quote-list">
+              <img src="photos/rsz_quote.jpg" class="rounded mx-auto d-block">
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-list">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col"><i class="fas fa-question"></i></th>
+                    <th scope="col"> Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><i class="fas fa-map-marker-alt"></i></th>
+                    <td> Somewhere on the PLANET </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="fas fa-envelope-open-text"></i></th>
+                    <td> bingqing.he@alum.utoronto.ca </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="fas fa-phone-volume"></i></th>
+                    <td> Guess the numbers </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="fab fa-linkedin-in"></i></th>
+                    <td><a href='https://www.linkedin.com/in/bingqinghe'> Click Me :) </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="fas fa-ellipsis-h"></i></th>
+                    <td> Click the icons near my name </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
