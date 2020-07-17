@@ -2,8 +2,8 @@
 
 - HTML, CSS (2020)
 - Git (2020)
-- Python (2020) 已经完成
-- Django (2020) 已经完成
+- Python (2020)
+- Django (2020)
 - SQL, Models, and Migrations (2020)
 - JavaScript (2020)
 - User Interfaces (2020)
