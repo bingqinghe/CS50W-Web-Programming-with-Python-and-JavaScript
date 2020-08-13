@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container">
+	<h2> {{ category }} </h2>
+</div>
+
+<div class="container" id="listing">
+	{% for list in lists %}
+	<div id="card-listing" class="card">
+  		<div class="row no-gutters">
+    		<div class="col-md-4">
+      			<img src="{{list.link}}" class="card-img" alt="...">
+    		</div>
+    		<div class="col-md-8">
+      			<div class="card-body">
+        			<h5 class="card-title"> {{ list.title }} </h5>
+        			<p class="card-text"> {{ list.description }} </p>
+        			<p class="card-text"> $ {{ list.price }} </p>
+        			<a href="{% url 'listingpage' list.id %}">
+        				<button class="btn btn-primary"> Details </button>
+        			</a>
+        			<p class="card-text"><small class="text-muted"> {{ list.time }} </small></p>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

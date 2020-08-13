@@ -1,0 +1,15 @@
+{% extends "auctions/layout.html" %}
+
+{% block body%}
+	<div class="container"><h2> Sorry, {{ title }} is no longer active. </h2></div>
+	<div class="container">
+		{% if thiswinner.winner == user.username %}
+			<h4> Congratulations for winning this bid! </h4>
+		{% endif %}
+		<ul>
+			<li> Owner: {{ thiswinner.owner }} </li>
+			<li> Winner: {{ thiswinner.winner }} </li>
+			<li> Price: $ {{ thiswinner.price }} </li>
+		</ul>
+	</div>
+{% endblock %}

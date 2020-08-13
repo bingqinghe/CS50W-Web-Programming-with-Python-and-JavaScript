@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container">
+	<h2> CREATE NEW LISTING </h2>
+</div>
+
+<div class="container">
+	<form action="{% url 'submitlist' %}" method="POST">
+		{% csrf_token %}
+		<div class="form-group">
+			<label for="list_title"> Title </label>
+			<input type="text" class="form-control" id="list_title" name="title" placeholder="TITLE" required>
+		</div>
+		<div class="form-group">
+			<label for="list_description"> Description </label>
+			<textarea class="form-control" id="list_description" name="description" placeholder="DESCRIPTION" rows="5"required></textarea>
+		</div>
+		<div class="form-group">
+			<label for="list_category"> Category </label>
+			<select class="form-control" id="list_category" name="category" required>
+				<option> Arts & Crafts </option>
+				<option> Beauty & Personal Care </option>
+				<option> Computers & Electornics </option>
+				<option> Fashion </option>
+				<option> Home & Kitchen </option>
+				<option> Toys & Games </option>
+				<option> Other </option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="list_bid"> Starting Bid </label>
+			<input type="number" class="form-control" id="list_bid" name="price" placeholder="$$$" required>
+		</div>
+		<div class="form-group">
+			<label for="list_link"> optional Image Link </label>
+			<input type="text" class="form-control" id="list_link" name="link" placeholder="https://www.example.com">
+		</div>
+
+		<button class="btn btn-primary" type="submit"> Submit </button>
+	</form>
+</div>
+{% endblock %}
