@@ -1,0 +1,11 @@
+textarea {
+    min-height: 400px;
+}
+
+.read {
+	background-color: #969696;
+}
+
+.cardmargin {
+	margin: 5px;
+}
