@@ -1,0 +1,14 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <h2> Write your thoughts here, {{user.username}} </h2>
+    <div class="container">
+        <form action="{% url 'submitpost' %}" method='POST'>
+            <div class="form-group">
+                <label for='newpost'> Write your posts: </label>
+                <textarea class="form-control" id="newpost" rows='5' placeholder="Start here" name="content"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit"> Submit </button>  
+        </form>
+    </div>
+{% endblock %}

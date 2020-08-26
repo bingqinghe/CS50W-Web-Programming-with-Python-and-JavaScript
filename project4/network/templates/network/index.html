@@ -1,0 +1,71 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div class="jumbotron">
+    	{% block profilename %}
+    		{% if user.username %} <h4 class="display-4"> Hello, {{ user.username }} </h4>
+    		{% else %} <h4 class="display-4"> Welcome </h4>
+    		{% endif %}
+    	{% endblock %}
+    	{% if not page_obj %} <p class="lead"> There is no posts :( </p>
+    	{% else %}
+    		{% block allposts %} <p class="lead"> All the posts </p> {% endblock %}
+    	{% endif %}
+    </div>
+
+    <div class="container" id='posts'>
+    	{% block eachposts %}
+    		{% for post in page_obj %}
+    			<div class="card-deck">
+    				<div class="card">
+    					<div class="card-header">
+    						<h5><a href="{% url 'profile' post.username %}"> {{ post.username }} </a></h5>
+    						{% if user.username == post.username %}
+    							<button class="btn btn-primary" onclick="editpost({{post.id}})"> Edit </button>
+    						{% endif %}
+    					</div>
+    					<div class="card-body" id="card-body-{{post.id}}">
+    						<p class="card-text"> {{ post.content }} </p>
+    						<p class="card-text"><small class="text-muted"> {{ post.time }} </small></p>
+    					</div>
+    					<div class="card-footer" id="like-{{post.id}}">
+    						{% if user.username %}
+    							{% if post.id in likeid %}
+    								<p><img class="unlikebtn" onclick="unlikepost({{post.id}},{{userlist}})" id="unlikebtn-{{post.id}}" src="https://img.icons8.com/ultraviolet/40/000000/hearts.png"/><b> {{post.likes}} </b></p>
+    							{% else %}
+    								<p><img class="likebtn" onclick="likepost({{post.id}},{{userlist}})" id="likebtn-{{post.id}}" src="https://img.icons8.com/office/16/000000/hearts.png"/><b> {{post.likes}} </b></p>
+    							{% endif %}
+    						{% else %}
+                                <p><img class="likebtn" id="likebtn-{{post.id}}" src="https://img.icons8.com/office/16/000000/hearts.png"/><b> {{post.likes}} </b></p>
+                            {% endif %}
+    					</div>
+    				</div>
+    			</div>
+                <br>
+    		{% endfor %}
+    	{% endblock %}
+    </div>
+    <br><br>
+
+    {% if page_obj %}
+    	{% if page_obj.paginator.num_pages >= 1 %}
+    		<nav aria-label="Page navigation example">
+    			<ul class="pagination">
+    				{% if page_obj.has_previous %}
+    					<li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}"> &laquo; Previous </a></li>
+    				{% else %}
+    					<li class="page-item disabled"><span class="page-link"> &laquo; Previous </span></li>
+    				{% endif %}
+    				{% for i in page_obj.paginator.page_range %}
+    					<li class="page-item"><a class="page-link" href="?page={{i}}"> {{ i }} </a></li>
+    				{% endfor %}
+    				{% if page_obj.has_next %}
+    					<li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}"> Next &raquo; </a></li>
+    				{% else %}
+    					<li class="page-item disabled"><span class="page-link"> Next &raquo; </span></li>
+    				{% endif %}
+    			</ul>
+    		</nav>
+    	{% endif %}
+    {% endif %}
+{% endblock %}

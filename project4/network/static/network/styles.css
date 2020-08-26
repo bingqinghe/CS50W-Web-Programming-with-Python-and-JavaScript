@@ -1,0 +1,19 @@
+body {
+	background-color: lightgrey;
+	font-family: sans-serif;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7) 0 6px 20px rgba(0, 0, 0, 0.3);
+	background-color: #e6e6e6;
+}
+
+.card-body {
+	font-family: Times, sans-serif;
+	font-size: 30px;
+}
+
+.form {
+	font-family: Times, sans-serif;
+	font-size: 25px;
+}
