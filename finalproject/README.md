@@ -16,26 +16,26 @@
 - This project is a receipt sharing website
 
 - Post:
-  -- The post requires four parts, a photo, a title, a preview and a full receipt
+  - The post requires four parts, a photo, a title, a preview and a full receipt
 
 - User Page:
-  -- It lists all the posts the user have uploaded with likes and comments counts
-  -- The posts are shown with the photo, the title and the preview
-  -- When clicking on the post title, it will jump to the post details page which shows the full receipt and all the comments
-  -- It allows the user to change their own profile photo
+  - It lists all the posts the user have uploaded with likes and comments counts
+  - The posts are shown with the photo, the title and the preview
+  - When clicking on the post title, it will jump to the post details page which shows the full receipt and all the comments
+  - It allows the user to change their own profile photo
 
 - Search Bar:
-  -- It allows users to seach the other users and posts they are interest
+  - It allows users to seach the other users and posts they are interest
 
 - Like and Comment:
-  -- This allows user like and leave comments on the page
-  -- The comments are shown with time and the user who leaves the comments
+  - This allows user like and leave comments on the page
+  - The comments are shown with time and the user who leaves the comments
 
 - Website brand
-  -- When clicking the left corner of the page with 'DELICIOUS FOOD', it will show all the posts from users who are followed
+  - When clicking the left corner of the page with 'DELICIOUS FOOD', it will show all the posts from users who are followed
 
 - Follow:
-  -- People can follow the users they are interested and see all the posts
+  - People can follow the users they are interested and see all the posts
 
 - Login and Register:
-  -- New users can register a account to start the journey and login with the username and password
+  - New users can register a account to start the journey and login with the username and password
