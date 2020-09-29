@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		
+		<title> {% block title %} {% endblock %} </title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+		<link href="{% static 'receipt/style.css' %}" rel="stylesheet">
+		<!-- font sheet -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Do+Hyeon">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Concert+One">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Grandstander">
+
+		<!-- -->
+		<script src="https://kit.fontawesome.com/35148eb65e.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" crossorigin="anonymous"></script>
+		<script src="{% static 'receipt/searchbar.js' %}"></script>
+		{% block import_script %} {% endblock %}
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarToggler">
+				<a id="brand-logo" class="navbar-brand mr-auto brandname" href="{% url 'index' %}"> DELICIOUS FOODS </a>
+				{% if request.user.is_authenticated %}
+					<a class="nav-link" href="{% url 'user' %}" data-toggle="tooltip" data-placement="bottom" title="Your Profile"><i class="fas fa-home"></i> Profile </a>
+					<a class="nav-link" href="{% url 'upload' %}" data-toggle="tooltip" data-placement="bottom" title="Add a receipt"><i class="fas fa-upload"></i> Upload </a>
+					<a class="nav-link" href="{% url 'logout' %}" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="fas fa-sign-out-alt"></i> LogOut </a>
+				{% endif%}
+				<form id="searchform" class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
+					<input id="searchquery" class="form-control mr-sm-2" type="search" name="searchquery" placeholder="Search">
+					<button id="searchbtn" class="btn btn-success" type="submit"> Search </button>
+				</form>
+			</div>
+		</nav>
+	
+		<main> {% block main %} {% endblock %} </main>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'receipt/layout.html' %}
+
+{% load static %}
+
+{% block title %} {{ users.user.username }}'s followings {% endblock %}
+
+{% block main %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 text-center">
+				<h3 style="margin-bottom: 1em;"> {{ users.user.username }}'s followings </h3>
+			</div>
+			<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+				{% for user in following %}
+					{% include 'receipt/userlist.html' %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

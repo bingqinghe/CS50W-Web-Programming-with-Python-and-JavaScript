@@ -1,0 +1,105 @@
+.brandname {
+	font-family: 'Do Hyeon', serif;
+}
+
+main {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+@media (max-width: 767px) {
+	main {
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+}
+@media (max-width: 575px) {
+	main {
+		margin-top: 65px;
+		margin-bottom: 65px;
+	}
+}
+main div.tab-content div.tab-pane {
+	margin-top: 35px;
+}
+
+.welcome-row {
+	height: calc(100vh-11em);
+}
+.welcome-row .welcome-col {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+#user-info p {
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+img.img-gallery {
+	width: 25%;
+	height: 100%;
+}
+@media (max-width: 991px) {
+	img.img-gallery {
+		width: 33.33%
+	}
+}
+@media (max-width: 767px) {
+	img.img-gallery {
+		width: 50%;
+	}
+}
+@media (max-width: 575px) {
+	img.img-gallery {
+		width: 100%;
+	}
+}
+
+.user-list:not(:last-child) {
+	margin-bottom: 1em;
+}
+.user-list p {
+	font-weight: bold;
+	margin-bottom: 0;
+}
+@media (max-width: 575px) {
+	.user-list:not(:last-child) {
+		margin-bottom: 2em;
+	}
+}
+
+.post-list {
+	font-size: 1em;
+	font-style: italic;
+	font-weight: bold;
+	border-radius: 0.5em;
+	border: 1px solid black;
+	padding: 1em;
+}
+.post-list:not(:last-child) {
+	margin-bottom: 1em;
+}
+
+#photo-info {
+	margin-top: 0.5em;
+}
+#photo-info div p {
+	font-style: italic;
+}
+#photo-info div p:not(:last-child) {
+	margin-bottom: 0;
+}
+
+#image-placeholder {
+	margin: 0 ;
+	padding: 0;
+}
+#image-placeholder #new-photo {
+	width: 100%;
+	border: 1px solid black;
+}
+
+textarea {
+	width: 100%;
+}

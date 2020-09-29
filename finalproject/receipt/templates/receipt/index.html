@@ -1,0 +1,23 @@
+{% extends 'receipt/layout.html' %}
+
+{% load static %}
+
+{% block title %} New Receipt {% endblock %}
+
+{% block main %}
+	<div class="container-fluid">
+		<div class="row">
+			<div>
+				{% if following %}
+					{% for post in posts %}
+						{% include 'receipt/postlist.html' %}
+					{% empty %}
+						<h1 style="font-family: 'Concert One', serif; text-align: center; font-size: 200%;"> There is no posts from your following list :( </h1>
+					{% endfor %}
+				{% else %}
+					<h1 style="font-family: 'Concert One', serif; text-align: center; font-size: 200%;"> No followings </h1>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

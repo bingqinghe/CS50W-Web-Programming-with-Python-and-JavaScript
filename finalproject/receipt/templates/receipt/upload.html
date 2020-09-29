@@ -1,0 +1,50 @@
+{% extends 'receipt/layout.html'%}
+
+{% load static %}
+
+{% block title %} Upload your Receipt {% endblock %}
+
+{% block import_script %}
+	<script src="{% static 'receipt/upload.js' %}"></script>
+{% endblock %}
+
+{% block main%}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 col-md-6 col-lg-5 offset-lg-1 col-xl-4 offset-xl-2">
+				<input type="file" id="upload-photo" name="file" style="display:none;">
+				<div id="image-placeholder">
+					<img id="new-photo" src="{{MEDIA_URL}}/upload.png" style="width: 50%; height: 50%;">
+				</div>
+			</div>
+
+			<div class="col-12 col-md-6 col-lg-5 col-xl-4" id="photo-options">
+				<nav>
+					<div class="nav nav-tabs" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-title-tab" data-toggle="tab" href="#nav-title" role="tab"> Title </a>
+						<a class="nav-item nav-link" id="nav-preview-tab" data-toggle="tab" href="#nav-preview" role="tab"> Preview </a>
+						<a class="nav-item nav-link" id="nav-receipt-tab" data-toggle="tab" href="#nav-receipt" role="tab"> Receipt </a>
+					</div>
+				</nav>
+			
+				<div class="tab-content" id="nav-tabcontent">
+					<div class="tab-pane fade show active" id="nav-title" role="tabpanel">
+						<input type="text" id="title" class="form-control" placeholder="Title of Food" required>
+					</div>
+					<div class="tab-pane fade" id="nav-preview" role="tabpanel">
+						<textarea type="text" id="preview" rows="5" placeholder="Preview of Food" style="width:100%; height:100%;" required></textarea>
+					</div>
+					<div class="tab-pane fade" id="nav-receipt" role="tabpanel">
+						<textarea type="text" id="receipt" rows="13" placeholder="Receipt of Food" required></textarea>
+					</div>
+				</div>
+				<br>
+				<div class="row" id="new-photo-buttons">
+					<div class="col col-lg col-xl text-center">
+						<button id="upload-photo-btn" class="btn btn-primary" type="button"> Upload </button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

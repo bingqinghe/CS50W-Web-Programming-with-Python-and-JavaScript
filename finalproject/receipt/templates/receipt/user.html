@@ -1,0 +1,84 @@
+{% extends 'receipt/layout.html' %}
+
+{% load static %}
+
+{% block title %} {{ users.user.username }} {% endblock %}
+
+{% block import_script %}
+	<script src="{% static 'receipt/user.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+	<div class="container-fluid">
+		<div id="user-info" class="row">
+			<div class="col-sm-5 col-md-5 col-lg-3 offset-lg-2 col-xl-3 offset-xl-2 text-center">
+				{% if request.user.id == users.user.id %}
+					<a href="#" id="change_profile_link">
+						<img src="{{ users.profile.url }}" id="profile_img" style="border-radius: 50%; width: 33%" alt="{{ users.user.username }} profile" data-toggle="tooltip" title="Click here to change your profile photo">
+						<input type="file" name="file" id="upload_profile" style="display: none;">
+					</a>
+				{% else %}
+					<img src="{{ users.profile.url }}" id="profile_img" style="border-radius: 50%; width: 33%" alt="{{ users.user.username }} profile" title="{{ users.user.username }}">
+				{% endif %}
+				<p> {{ users.user.username }} </p>
+			</div>
+		
+			<div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 text-center">
+				{% if show_follow_button%}
+					<button id="follow-btn" class="btn btn-info" type="button" name="follow" {% if already_follow %} disabled {% endif %}> Follow </button>
+				{% endif %}
+			</div>
+
+			<div class="col-sm-5 col-md-5 col-lg-3 col-xl-3 text-center" id="user-counts">
+				<p style="margin-top: 0; font-family: sans-serif;"> Posts: {{ posts.count }} </p>
+				{% if following %}
+					<p> Following: <span id="following_count"><a href="{% url 'following' users.user.id %}"> {{ following }} </a></span></p>
+				{% else %}
+					<p> Following: <span id="following_count"> {{ following }} </span></p>
+				{% endif %}
+				{% if follower %}
+					<p> Followers: <span id="followers_count"><a href="{% url 'followers' users.user.id %}"> {{ followers }} </a></span></p>
+				{% else %}
+					<p> Followers: <span id="followers_count"> {{ followers }} </span></p>
+				{% endif %}
+			</div>
+		</div>
+		<hr>
+
+		<div class="row">
+			<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+				{% if posts %}
+					<div class="d-flex flex-wrap justify-content-between">
+						<div class="card-deck">
+							{% for post in posts %}
+							<div class="card mb-3">
+								<div class="row no-gutters">
+    								<div class="col-md-4">
+      									<img src="{{ post.image.url }}" style="width: 100%; border: 1px solid black;" alt="{{ post.author.user.username }} post" title="{{ post.author.user.username }} post"
+      									data-toggle="tooltip" data-html='true' data-post-id='{{ post.id }}' data-likes='{{ post.likes.count }}' data-comments='{{ post.comments.count }}'>
+    								</div>
+    								<div class="col-md-8">
+      									<div class="card-body">
+        									<a href="{% url 'post' post.id %}"><h5 class="card-title"> {{ post.title }} </h5></a>
+        									<p class="card-text"> {{ post.preview }} </p>
+        									<p class="card-text"><small class="text-muted"> Last update: {{ post.time }} </small></p>
+        									<p>
+												<i class="fas fa-heart"></i><span id="likes-count"> &nbsp; {{ post.likes.count }} </span>
+												&nbsp;&nbsp;&nbsp;
+												<i class="fas fa-comment-alt"></i><span id="comments-count"> &nbsp; {{ post.comments.count }} </span>
+											</p>
+      									</div>
+    								</div>
+
+  								</div>
+							</div>
+  							{% endfor %}
+						</div>
+					</div>
+				{% else %}
+					<p class="text-center"><strong> No Posts </strong></p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

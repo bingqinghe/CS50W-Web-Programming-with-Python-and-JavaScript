@@ -1,0 +1,71 @@
+{% extends 'receipt/layout.html' %}
+
+{% load static %}
+
+{% block title %} LogIn or Register {% endblock %}
+
+{% block import_script %} 
+	<script src="{% static 'receipt/welcome.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+      <div class="container-fluid">
+		<div class="welcome-row">
+			<div class="col-md-8 offset-md-2 col-lg-4 offset-lg-2 col-xl-3 text-center welcome-col">
+				<p> Have you ever curious about how to make delicious food? </p>
+				<p> Have you ever want to share what you made to your friends? </p>
+				<p> Join in <b class="brandname"> DELICIOUS FOODS </b> now!</p>
+			</div>
+			<div>
+				<!-- Login / Register Tab-->
+				<nav>
+                	           <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    	         <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"> LogIn </a>
+                    	         <a class="nav-item nav-link" id="nav-register-tab" data-toggle="tab" href="#nav-register" role="tab"> Register </a>
+               		       </div>
+            	      </nav>
+
+            	     <div class="tab-content" id="nav-tabContent">
+            		<!-- Login input form -->
+            		    <div class="tab-pane fade show active" id="nav-login" role="tabpanel">
+            			   <form id="form-login" name="form-login" action="{% url 'login' %}" method="POST">
+            				{% csrf_token %}
+            				<div class="form-group">
+            					<label for="login-username"><i class="fas fa-user"></i> Username </label>
+            					<input type="text" name="username" class="form-control" id="login-username" placeholder="Username" required>
+            				</div>
+            				<div class="form-group">
+            					<label for="login-password"><i class="fas fa-key"></i> Password </label>
+            					<input type="password" name="password" class="form-control" id="login-password" placeholder="Password" required>
+            				</div>
+            				<button type="submit" class="btn btn-primary"> LOGIN </button>
+            			   </form>
+            		    </div>
+            		<!-- Register form -->
+            		<div class="tab-pane fade" id="nav-register" role="tabpanel">
+            			<form id="form-register" name="form-register" action="{% url 'register' %}" method="POST">
+            				{% csrf_token %}
+            				<div class="form-group">
+            					<label for="r-username"><i class="fas fa-user"></i> Username </label>
+            					<input type="text" name="username" class="form-control" id="r-username" placeholder="Username" required>
+            				</div>
+            				<div class="form-group">
+            					<label for="r-email"><i class="fas fa-envelope"></i> Email Address </label>
+            					<input type="email" name="email" class="form-control" id="r-email" placeholder="Email" required>
+            				</div>
+            				<div class="form-group">
+            					<label for="r-password"><i class="fas fa-key"></i> Password </label>
+            					<input type="password" name="password" class="form-control" id="r-password" placeholder="Password" required>
+            				</div>
+            				<div class="form-group">
+            					<label for="c-password"><i class="fas fa-key"></i> Confirm Password </label>
+            					<input type="password" name="confirmpassword" class="form-control" id="c-password" placeholder="Confirm Password" required>
+            				</div>
+            				<button type="submit" class="btn btn-outline-success"> Register </button>
+            			</form>
+            		</div>
+            	</div>
+            </div>
+	     </div>
+	</div>
+{% endblock %}

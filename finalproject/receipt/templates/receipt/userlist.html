@@ -1,0 +1,22 @@
+<div class="user-list">
+	<div class="row d-flex align-items-center">
+		<div class="col-6 col-lg col-xl text-center">
+			<a href="{% url 'user' user.user.id %}">
+				<img src="{{ user.profile.url }}" style="border-radius: 50%; width: 33%" alt="{{ user.user.username }} profile" title="{{ user.user.username }}">
+			</a>
+		</div>
+
+		<div class="col-6 order-1 col-lg col-xl text-center">
+			<a href="{% url 'user' user.user.id %}">
+				<p style="font-family: Grandstander, serif;"> {{ user.user.username }} </p>
+			</a>
+		</div>
+
+		<div class="col-6 order-12 col-lg col-xl text-center">
+			Followers: <span> {{ user.followers.count }} </span>
+		</div>
+		<div class="col-6 col-lg col-xl text-center">
+			Following: <span> {{ user.following.count }} </span>
+		</div>
+	</div>
+</div>

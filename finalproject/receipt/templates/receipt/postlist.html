@@ -1,0 +1,23 @@
+<div class="post-list">
+	<div class="card mb-3">
+  		<div class="row no-gutters">
+    		<div class="col-md-4">
+      			<a href="{% url 'post' post.id %}">
+      				<img src="{{ post.image.url }}" class="card-img" alt="{{ post.author.user.username }} post">
+      			</a>
+    		</div>
+   			<div class="col-md-8">
+      			<div class="card-body">
+        			<h5 class="card-title"> {{ post.title }} </h5>
+        			<p class="card-text"> {{ post.preview }} </p>
+        			<p class="card-text"> Post by <a href="{% url 'user' post.author.user.id %}"> {{ post.author.user.username}} </a></p>
+        			<div class="row">
+        				&nbsp; <span><i class="fas fa-heart"></i> &nbsp; {{ post.likes.count }} </span> &nbsp;
+        				&nbsp; <span><i class="fas fa-comment-alt"></i> &nbsp; {{ post.comments.count }} </span> &nbsp;
+        			</div>
+        			<p class="card-text"><small class="text-muted"> -- {{ post.time }} </small></p>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+{% extends 'receipt/layout.html' %}
+
+{% load static %}
+
+{% block title %} Search {% endblock %}
+
+{% block main%}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+				<div class="text-center">
+					<h3 style="font-family: Lobster, serif;"> Search Results </h3>
+				</div>
+				{% for user in users %}
+					{% include 'receipt/userlist.html' %}
+				{% empty %}
+					<p><strong> No user found :( </strong></p>
+				{% endfor %}
+				<hr>
+				{% for post in posts %}
+					{% include 'receipt/postlist.html' %}
+				{% empty %}
+					<p><strong> No post found :( </strong></p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
