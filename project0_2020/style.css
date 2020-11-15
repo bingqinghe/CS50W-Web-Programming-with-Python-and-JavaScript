@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    padding-left: 400px;
+    padding-top: 100px;
+    height: auto;
+    width: 700px;
+}
+
+#searchbar_search {
+    background-color: white;
+    border-right: 0.1px solid white;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.search {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid lightgray;
+    border-left: 0.1px solid white;
+    height: 40px;
+    width: 550px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.button-group-index {
+    padding-top: 20px;
+}
+
+.submit-btn {
+    border: 0.1px solid white;
+    border-radius: 4px;
+    color: #5a5959;
+    font-size: 15px;
+    margin: 11px 4px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 16px;
+    color: #5f6368;
+    background-color: #f2f2f2;
+    min-width: 54px;
+}
+
+.advanced-submit {
+    height: 30px;
+    min-width: 120px;
+    line-height: 100%;
+    margin-left: 560px;
+}
