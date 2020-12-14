@@ -12,10 +12,10 @@
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
                 <h2 class="display-4"> Wiki </h2>
-                <form class="form-control" method="POST" action="{% url 'index' %}">
+                <form method="POST" action="{% url 'index' %}">
                     {% csrf_token %}
-                    <h6> SEARCH: </h6>
-                    <h6>{{ form.searchtitle }} </h6>
+                    <label for='search_title'> SEARCH: </label>
+                    {{ form.searchtitle }}
                 </form>
                 <br>
                 <div>
